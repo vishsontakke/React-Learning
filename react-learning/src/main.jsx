@@ -11,7 +11,7 @@ import Login from './components/Login';
 import Navbar from './components/Navbar.jsx';
 import Employee from './components/Employee.jsx';
 import About from './components/About.jsx'; // Ensure correct file extension
-import Contact from './components/Contact.jsx'; // Ensure correct file extension
+import Contact from './components/ContactPage.jsx'; // Ensure correct file extension
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -55,26 +55,8 @@ const Employee = () => {
                                 <td>
                                     <div className="skeleton-cell"></div>
                                 </td>
-                                <td>
-                                    <div className="skeleton-cell"></div>
-                                </td>
-                                <td>
-                                    <div className="skeleton-cell"></div>
-                                </td>
-                                <td>
-                                    <div className="skeleton-cell"></div>
-                                </td>
                             </tr>
                             <tr className="skeleton-loader">
-                                <td>
-                                    <div className="skeleton-cell"></div>
-                                </td>
-                                <td>
-                                    <div className="skeleton-cell"></div>
-                                </td>
-                                <td>
-                                    <div className="skeleton-cell"></div>
-                                </td>
                                 <td>
                                     <div className="skeleton-cell"></div>
                                 </td>
@@ -107,26 +89,8 @@ const Employee = () => {
                                 <td>
                                     <div className="skeleton-cell"></div>
                                 </td>
-                                <td>
-                                    <div className="skeleton-cell"></div>
-                                </td>
-                                <td>
-                                    <div className="skeleton-cell"></div>
-                                </td>
-                                <td>
-                                    <div className="skeleton-cell"></div>
-                                </td>
                             </tr>
                             <tr className="skeleton-loader">
-                                <td>
-                                    <div className="skeleton-cell"></div>
-                                </td>
-                                <td>
-                                    <div className="skeleton-cell"></div>
-                                </td>
-                                <td>
-                                    <div className="skeleton-cell"></div>
-                                </td>
                                 <td>
                                     <div className="skeleton-cell"></div>
                                 </td>
@@ -158,11 +122,11 @@ const Employee = () => {
                         <tbody>
                             {employee.map(repo => (
                                 <tr key={repo.id}>
-                                    <td>{repo.id}</td>
-                                    <td>{repo.name}</td>
-                                    <td>{repo.email}</td>
-                                    <td>{repo.role}</td>
-                                    <td>{repo.mobile_no}</td>
+                                    <td style={{ textAlign: 'center' }}>{repo.id}</td>
+                                    <td style={{ textAlign: 'center' }}>{repo.name}</td>
+                                    <td style={{ textAlign: 'center' }}>{repo.email}</td>
+                                    <td style={{ textAlign: 'center' }}>{repo.role}</td>
+                                    <td style={{ textAlign: 'center' }}>{repo.mobile_no}</td>
                                 </tr>
                             ))}
                         </tbody>

@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 // import Contact from './components/contact';
 // import Contact from './components/Contact';
-import Contact from './Contact'; 
 // import Contact from ;
 
 const Home = () => {

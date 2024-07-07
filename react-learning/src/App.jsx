@@ -4,17 +4,14 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Home from './components/Home';
 import Navbar from './components/Navbar';
+import Card from './components/Card';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+       < Card/>
     </>
   )
 }

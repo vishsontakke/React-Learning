@@ -6,21 +6,25 @@ import "./Login.css";  // Import your custom CSS file
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [btnstatus, setBtnsatus] = useState(false);
     const { loginUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setBtnsatus(true);
         try {
             await loginUser(username, password);
             navigate('/');
             setUsername('');
             setPassword('');
+            setBtnsatus(false);
         } catch (error) {
             console.error('Login failed:', error);
             alert('Invalid credentials');
             setUsername('');
             setPassword('');
+            setBtnsatus(false);
         }
     };
 
@@ -52,7 +56,7 @@ const Login = () => {
                         required
                     />
                 </div>
-                <button type="submit" className="btn btn-primary btn-block">Login</button>
+                <button type="submit" className="btn btn-primary btn-block" disabled={btnstatus} >Login</button>
             </form>
         </div>
     );

@@ -4,6 +4,7 @@ import axios from 'axios';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [authTokens, setAuthTokens] = useState(() =>
         localStorage.getItem('authTokens')
             ? JSON.parse(localStorage.getItem('authTokens'))
@@ -24,6 +25,7 @@ export const AuthProvider = ({ children }) => {
             setAuthTokens(response.data);
             setUser(JSON.parse(atob(response.data.access.split('.')[1])));
             localStorage.setItem('authTokens', JSON.stringify(response.data));
+            setIsLoggedIn(true);
             return response.data;
         } catch (error) {
             console.error(error);
@@ -34,6 +36,7 @@ export const AuthProvider = ({ children }) => {
     const logoutUser = () => {
         setAuthTokens(null);
         setUser(null);
+        setIsLoggedIn(false);
         localStorage.removeItem('authTokens');
     };
 
@@ -44,7 +47,7 @@ export const AuthProvider = ({ children }) => {
     }, [authTokens]);
 
     return (
-        <AuthContext.Provider value={{ user, authTokens, loginUser, logoutUser }}>
+        <AuthContext.Provider value={{isLoggedIn,user, authTokens, loginUser, logoutUser }}>
             {children}
         </AuthContext.Provider>
     );
