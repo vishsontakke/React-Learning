@@ -6,16 +6,23 @@ const Contact = () => {
     const [name, setName] = useState("");
 
     return (
-        <div>
-            < About/>
-            <h1>Hello {name}</h1>
-            <input
-                type="text"
-                value={name}
-                onInput={(e) => setName(e.target.value)}
-            />
-            <h4>Your name is {name}</h4>
-        </div>
+        <>       
+            <div className="container mt-5">
+                {/* <About /> */}
+                <div className="card p-3">
+                    <h1 className="mb-4">Hello {name}</h1>
+                    <input
+                        type="text"
+                        className="form-control mb-3"
+                        value={name}
+                        onInput={(e) => setName(e.target.value)}
+                        placeholder="Enter your name"
+                    />
+                    <h4 className="mb-3">Your name is {name}</h4>
+                </div>
+            </div>
+        </>
+
     );
 }
 
