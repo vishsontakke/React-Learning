@@ -1,0 +1,16 @@
+/* Login.css */
+
+.login-container {
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+}
+
+.login-form .btn-block {
+    width: 100%;
+}

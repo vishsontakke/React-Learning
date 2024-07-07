@@ -1,0 +1,19 @@
+.skeleton-loader .skeleton-cell {
+    background-color: #e0e0e0;
+    height: 20px;
+    margin: 4px 0;
+    border-radius: 4px;
+    animation: skeleton-loading 1.5s infinite linear;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: #e0e0e0;
+    }
+    50% {
+        background-color: #f0f0f0;
+    }
+    100% {
+        background-color: #e0e0e0;
+    }
+}

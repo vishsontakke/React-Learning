@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
+import AuthContext from "../context/AuthContext"; 
 
 const Navbar = () => {
+    const { user, logoutUser } = useContext(AuthContext); // Get user and logout function from AuthContext
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -16,12 +19,13 @@ const Navbar = () => {
                                 <Link className="nav-link" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                            </li>
-                            <li className="nav-item">
                                 <Link className="nav-link" to="/about">About</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/contact">Contact</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/employee">Employee</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -34,11 +38,25 @@ const Navbar = () => {
                                 </ul>
                             </li>
                         </ul>
+                        <ul className="navbar-nav ms-auto">
+                            {user ? (
+                                <li className="nav-item">
+                                    {console.log(user)}
+                                    {/* {} {user.lastName} */}
+                                    <button className="btn btn-outline-secondary" onClick={logoutUser}>Logout</button>
+                                </li>
+                            ) : (
+                                <li className="nav-item">
+                                    <Link className="btn btn-outline-primary" to="/login">Login</Link>
+                                </li>
+                            )}
+                        </ul>
                     </div>
                 </div>
             </nav>
+            <Outlet />
         </>
-    )
-}
+    );
+};
 
 export default Navbar;
